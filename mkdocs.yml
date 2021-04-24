@@ -1,0 +1,28 @@
+site_name: doc for demo app.s
+copyright: ©101camp 2021
+repo_url: https://github.com/mainium/demo
+
+theme: 
+  name: 'solar'
+  custom_dir: '_theme/mkdocs_bootswatch/solar'
+
+nav:
+  - Home: index.md
+  - License: license.md
+  - Privacy: privacy_policy.md
+  - Terms: terms_of_service.md
+
+#  - ANN: announce.md
+#  - User Guide: guide.md
+
+markdown_extensions:
+  - toc:
+      permalink: "¶"
+
+extra:
+  logo: img/logo.jpg
+  include_toc: yes
+  extra_nav_links:
+    Fork me on GitHub: https://github.com/mainium/demo
+
+
