@@ -81,20 +81,23 @@ def cd(c, path2):
     c.run('pwd')
 
 #@task 
-def ccname(c, site):
+def ccname(c):
     '''base cfg. write CNAME into aim path
     '''
     #print(CSITES[site]['CNAME'])
-    _aim = '%s/%s/CNAME'%(CAMPROOT, CSITES[site]['ghp'])
-    _cmd = "echo {} > {}".format(CSITES[site]['CNAME'], _aim)
+    _aim = '%s/CNAME'%AIM
+    _cmd = "cat {} > {}".format('CNAME', _aim)
     print(_cmd)
-    #c.run(_cmd, hide=False, warn=True)
-    #c.run('cat %s'% _aim, hide=False, warn=True)
+    c.run(_cmd, hide=False, warn=True)
+    c.run('cat %s'% _aim, hide=False, warn=True)
     return None
 
 #@task 
 def sync4media(c):
+    global AIM
+
     c.run('cp -rvf img %s/'% AIM, hide=False, warn=True)
+    print('ls %s/'% AIM)
     c.run('ls %s/'% AIM, hide=False, warn=True)
     c.run('pwd')
 
@@ -123,39 +126,27 @@ def pu(c):
     _ts = '{}.{}'.format(time.strftime('%y%m%d %H%M %S')
                      , str(time.time()).split('.')[1][:3] )
 
-    c.run('pwd')
+    cd(c, AIM)
+    #c.run('pwd')
     c.run('git st', hide=False, warn=True)
     #c.run('git add .', hide=False, warn=True)
     #c.run('git ci -am '
-    c.run('git imp '
+    c.run('git doc '
           '"inv(loc) MkDocs upgraded by DAMA (at %s)"'% _ts
                     , hide=False, warn=True)
     #c.run('git pu', hide=False, warn=True)
+    cd(c, SROOT)
 
 #   'rsync -avzP4 {static_path}/media/ {deploy_path}/media/ && '
 
 
 #@task 
-def gh(c, site):
-    '''$ inv gh [101|py] <- push gh-pages for site publish
-    '''
-    global CAMPROOT
-    global CSITES
-    print(CAMPROOT)
-    
-    #ccname(c, site)
-    sync4media(c)
-    sync4readme(c)
-    
+def gh(c):
     _ts = '{}.{}'.format(time.strftime('%y%m%d %H%M %S')
                      , str(time.time()).split('.')[1][:3] )
     
-    _aim = '%s/%s'%(CAMPROOT, CSITES[site]['ghp'])
-    cd(c, _aim)
-    #os.chdir(AIM)
-    #with cd('site/'):
-    #c.run('pwd')
-    c.run('ls')
+    c.run('pwd')
+    #c.run('ls')
     c.run('git st', hide=False, warn=True)
     #c.run('git add .', hide=False, warn=True)
     #c.run('git ci -am '
@@ -166,24 +157,23 @@ def gh(c, site):
 
 
 @task 
-def pub(c, site):
+def pub(c):
     '''$ inv pub [101|py] <- auto deploy new site version base multi-repo.
     '''
 
     c.run('ls')
-    
     print('auto deplo NOW:')
-    #return None
-    return None
-    bu(c)
-
-    pu(c)
     #ccname(c)
-    #sync4media(c)
-    gh(c, site)
-    ver(c)
+    #return None
+    bu(c)
+    ccname(c)
+    sync4media(c)
+    pu(c)
 
+    gh(c)
+    ver(c)
     return None
+
 
 
 
