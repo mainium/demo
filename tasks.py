@@ -157,6 +157,14 @@ def gh(c):
 
 
 @task 
+def syncpl(c):
+    c.run('ssh -t hk0s0ra '
+          'cd /data/www/fbapp_demo &&'
+          'git pl'
+          , hide=False, warn=True)
+    #c.run('git pu', hide=False, warn=True)
+
+@task 
 def pub(c):
     '''$ inv pub [101|py] <- auto deploy new site version base multi-repo.
     '''
