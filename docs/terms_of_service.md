@@ -28,7 +28,7 @@ Your use of the Website is governed by the following terms and conditions (“Te
 
 “Transactions”      means a sale and purchase transaction of the Products between a Buyer and a Supplier which is conducted online via the Website; and
 
-“Website” or “Prestodirect”     means the e-commerce platform operated by Mainium Sdn. Bhd. [Registration No. 201401037722 (1113867-K)] with its domain at [insert Prestodirect’s domain] and mobile application known as [insert].
+“Website” or “Prestodirect”     means the e-commerce platform operated by Mainium and mobile application known as [insert].
 1.2Use of Services and the Website
 
 1.2.1The Company provides e-commerce facilities and Services via the Website. 
@@ -267,12 +267,14 @@ Upon the suspension of the Services, the Company shall post a notification on th
 
 9.2Unless specified otherwise in this Terms and Conditions or by the Company, any notice, request, demand or other communication to the Company under these Terms and Conditions shall be given or made in writing and delivered personally or sent by prepaid registered post to the following address: 
 
-Mainium Sdn. Bhd., 
-Unit C-2-01, Level 2, Capital 3, Oasis Square 
-No. 2, Jalan PJU 1A/7A, Ara Damansara 
-47301 Petaling Jaya 
-Selangor Darul Ehsan 
-Malaysia
+Mainium.com
+
+    No. 388 Jida Water Bay Road ,
+    Xiangzhou District, 
+    Guangdong Province
+    Zhuhai
+    China
+
 
 10.Assignment
 The Company shall have the right to assign and/or novate the Terms and Conditions or any part of the same to any person or entity, by providing written notice to you which shall be posted on the Website, and you hereby irrevocably agree and consent to any such assignment and/or novation. You may not assign, in whole or part, any of these Terms and Conditions to any person or entity.
