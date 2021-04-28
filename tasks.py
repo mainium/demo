@@ -174,7 +174,7 @@ def pub(c):
     #ccname(c)
     #return None
     bu(c)
-    ccname(c)
+    #ccname(c)
     sync4media(c)
     pu(c)
 
